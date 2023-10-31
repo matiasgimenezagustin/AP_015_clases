@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* NORMALIZE */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color)
+}
+
+:root{
+    --primary-color: #AED6B3;
+    --bg-color: #F5F2EB;
+    --secondary-color:#797979;
+    --text-color: black;
+    --bg-color-2: white;
+}
+
+.btn_primary{
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    padding: 12px 18px;
+    display: flex;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_secondary{
+    background-color: transparent;
+    font-weight: 500;
+    border-radius: 40px;
+    border: 1px solid var(--text-color);
+    padding: 16px 30px;
+    
+}
+
+.btn_terciary{
+    border: none;
+    background-color: transparent;
+    padding: 12px 18px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+header button:nth-child(1){
+    font-size: 20px;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+header{
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+    padding: 20px 70px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+}
+
+
+.form_login{
+    background-color: var(--bg-color-2);
+    padding: 58px 52px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+
+}
+
+.img_login_container{
+    display: flex;
+    align-items: center;
+}
+
+.form_login > h1{
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.form_login > p{
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.form_login form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_login form .not_account_secondary{
+    color: var(--secondary-color);
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 32px;
+}
+
+.form_login form .not_account_secondary > a{
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;    
+}
+
+.form_login form > input{
+    border: 1px var(--secondary-color) solid;
+    background-color: transparent;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 12px;
+    
+
+}
+.form_login form > input::placeholder{
+    color: var(--secondary-color);
+}
+
+.form_login .or_sign_in{
+    margin-top: 32px; 
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.btn_container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.not_account_primary{
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 32px;
+}
+
+.not_account_primary > a{
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+}
