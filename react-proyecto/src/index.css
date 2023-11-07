@@ -1,0 +1,11 @@
+.titulo{
+  color: blueviolet;
+}
+
+.caja{
+  background-color: rgb(239, 239, 172);
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  border: solid 1px black;
+}
