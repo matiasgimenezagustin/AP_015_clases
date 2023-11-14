@@ -1,7 +1,7 @@
 import React from 'react'
 import { Caja, Product } from './components'
 import { CiFileOn, CiBatteryFull } from "react-icons/ci";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle,AiFillFolder } from "react-icons/ai";
 
 
 
@@ -24,6 +24,13 @@ const App = () => {
       extension: 'html',
       peso: '90kb',
       tipo: 'archivo',
+      creadoEn: '2023/03/08'
+    },
+    {
+      nombre: 'components',
+      extension: 'null',
+      peso: '90mb',
+      tipo: 'carpeta',
       creadoEn: '2023/03/08'
     }
   ]
