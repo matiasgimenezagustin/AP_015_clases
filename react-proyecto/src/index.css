@@ -2,10 +2,20 @@
   color: blueviolet;
 }
 
-.caja{
-  background-color: rgb(239, 239, 172);
-  border-radius: 10px;
-  width: 200px;
-  height: 200px;
-  border: solid 1px black;
+
+.header-file{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+.header-file h2{
+  font-size: 18px;
+}
+
+.file{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px black solid;
 }

@@ -13,7 +13,7 @@ Jeremias Goytia
 
 Repo: 
 
-Grupo 2:
+Grupo 2: https://github.com/erica123-source/Grupo-2--React-UTN.git
 
 Erica Micaela Vargas
 Camila Taboada
@@ -29,7 +29,7 @@ Gomez Ivan
 Facundo Oliva
 Matias Mansilla
 Federico Ayala
-Noa ?
+Noah Nicanor Peralta Cassutt
 
 Repo: 
 
@@ -59,21 +59,28 @@ Enzo Dellape
 Bruno Busnelli
 Benjamin Concha
 Diego Ramos
-Lautaro Blanco
+Lautaro Blanco Perdomo
 
-Repo: 
+Repo: https://github.com/brunobusnelli/Grupo6-AP 
 
 Grupo 7:
 
 Dante olmos agustin
 Facundo Rullo
 Leo Condori
-Lautaro Yudi
+Lautaro Yudi Amir
+Gimena Gisel Escalante
 
-Repo: 
+Repo: https://github.com/FacuuR001/Grupo-7-React-UTN
 
 
+Grupo 8:
 
+Agusto Vega
+Leandro Hernan Luna
+Lucas Nuñez
+
+Repo:
 
 
 
