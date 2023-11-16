@@ -36,6 +36,14 @@ const App = () => {
   ]
   const [contador, setContador ] = useState(0)
   const [tengoHambre, setTengoHambre] = useState(true)
+
+  const [isVisible, setIsVisible] = useState()
+
+  const visible = () => {
+    setIsVisible(!isVisible)
+  }
+
+
   const aumentar = () =>{
     setContador(contador + 1)
     console.log(contador)
@@ -43,7 +51,11 @@ const App = () => {
   console.log('Me recargo')
   return (
     <section>
-
+       <section>
+        {isVisible && <div className='black'></div>}
+      
+        {isVisible ? <button onClick={visible}>Ocultar</button> : <button onClick={visible}>Mostrar</button> }
+      </section>
       <Product nombre={'tv samsung'} stock={4} descripcion={'una tv muy buena'} precio={300} esFavorito={false}/>
       <h1>Eventos <CiBatteryFull /></h1>
       <button onClick={saludar}>Dame click</button>
@@ -134,3 +146,8 @@ Si isVisible es true la caja se muestra
 Vamos a crear un button que diga mostrar o ocultar dependiendo de si isVisible es true o no
 El botton al hacerle click debera cambiar al estado a su valor opuesto
 */
+
+/* si se cumple && hago esto */
+
+
+
