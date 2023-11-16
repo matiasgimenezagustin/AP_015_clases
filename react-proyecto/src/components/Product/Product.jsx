@@ -1,28 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import './Product.css'
 
-const Product = (p) => {
+const Product = ({nombre, precio, esFavorito, stock, descripcion}) => {
+    const [isCurrentFavorite, setIsCurrentFavorite] = useState(esFavorito)
 
+    const addFavorite = () =>{
+      setIsCurrentFavorite(!isCurrentFavorite)
+    }
+    console.log('me recargo')
     return (
       <div>
-        {p.esFavorito && <span>{'<3'}</span>}
+        {esFavorito && <span>{'<3'}</span>}
         {
-            p.nombre 
-                ? <h2>{p.nombre}</h2>
+            nombre 
+                ? <h2>{nombre}</h2>
                 : <h2 className="red">Error 404!</h2>
         }
 
-        <h2 className={p.nombre ? 'subtitulo' : 'red'}>{p.nombre ? p.nombre : 'Error 404!'}</h2>
+        {/* <h2 className={nombre ? 'subtitulo' : 'red'}>{nombre ? nombre : 'Error 404!'}</h2> */}
    
-        <p>{p.descripcion}</p>
-        <span>Precio: {p.precio}</span>
+        <p>{descripcion}</p>
+        <span>Precio: {precio}</span>
         <div>
-          Stock: {p.stock}
+          Stock: {stock}
         </div>
         {
-            p.esFavorito 
-            ? <button>Quitar de favoritos</button>
-            : <button>Agregar a favoritos</button>
+          isCurrentFavorite
+            ? <button onClick={addFavorite}>Quitar de favoritos</button>
+            : <button onClick={addFavorite}>Agregar a favoritos</button>
         }
       </div>
     )

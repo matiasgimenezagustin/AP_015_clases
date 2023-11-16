@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Caja, Product } from './components'
 import { CiFileOn, CiBatteryFull } from "react-icons/ci";
 import { AiFillCloseCircle,AiFillFolder } from "react-icons/ai";
@@ -34,19 +34,30 @@ const App = () => {
       creadoEn: '2023/03/08'
     }
   ]
-
+  const [contador, setContador ] = useState(0)
+  const [tengoHambre, setTengoHambre] = useState(true)
+  const aumentar = () =>{
+    setContador(contador + 1)
+    console.log(contador)
+  }
+  console.log('Me recargo')
   return (
     <section>
+
+      <Product nombre={'tv samsung'} stock={4} descripcion={'una tv muy buena'} precio={300} esFavorito={false}/>
       <h1>Eventos <CiBatteryFull /></h1>
       <button onClick={saludar}>Dame click</button>
       <button onClick={() => alert('hola')}>Dame click 2</button>
       <button onClick={() => saludar('pepe')}>Dame click 3</button>
+
+      <h1>Contador: {contador}</h1>
+      <button onClick={aumentar}>Aumentar</button>
       <div className='file-list'>
         {archivos.map((archivo) => (
           <div className='file'>
             <div className='header-file'>
-              <CiFileOn />
-              <h2>{archivo.nombre}.{archivo.extension}</h2>
+              {archivo.tipo == 'carpeta' ? <AiFillFolder/> : <CiFileOn />}
+              <h2>{archivo.nombre}{archivo.tipo == 'archivo' && '.' + archivo.extension}</h2>
             </div>
             <span>Peso: {archivo.peso}</span> <br />
             <span>Fecha de creacion: {archivo.creadoEn}</span>
@@ -112,4 +123,14 @@ export default App
   </button>
 </div>
  
+*/
+
+/* 
+Vamos a crear un div que tenga 200 de ancho por 200 de alto y su fondo sea negro
+Vamos a crear un estado que diga isVisible que empieze en false
+
+Si isVisible es true la caja se muestra
+
+Vamos a crear un button que diga mostrar o ocultar dependiendo de si isVisible es true o no
+El botton al hacerle click debera cambiar al estado a su valor opuesto
 */
