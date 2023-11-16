@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Caja, Product } from './components'
+import { Caja, Cart, Product } from './components'
 import { CiFileOn, CiBatteryFull } from "react-icons/ci";
 import { AiFillCloseCircle,AiFillFolder } from "react-icons/ai";
+import { productos } from './data';
 
 
 
@@ -39,6 +40,28 @@ const App = () => {
 
   const [isVisible, setIsVisible] = useState()
 
+
+
+
+  const [cart, setCart] = useState([])
+
+  const addToCart = (product, quantity) =>{
+
+    if(cart.some(productFromCart => productFromCart.id == product.id)){
+      setCart(cart.map( (productFromCart) =>{
+        if(productFromCart.id == product.id){
+          productFromCart.quantity += quantity
+        }
+        return productFromCart
+      }))
+    }
+    else{
+      setCart([...cart, {...product, quantity}])
+    }
+
+  }
+  console.log(cart)
+
   const visible = () => {
     setIsVisible(!isVisible)
   }
@@ -49,6 +72,8 @@ const App = () => {
     console.log(contador)
   }
   console.log('Me recargo')
+
+  const [showCart, setShowCart] = useState(false)
   return (
     <section>
        <section>
@@ -56,7 +81,19 @@ const App = () => {
       
         {isVisible ? <button onClick={visible}>Ocultar</button> : <button onClick={visible}>Mostrar</button> }
       </section>
-      <Product nombre={'tv samsung'} stock={4} descripcion={'una tv muy buena'} precio={300} esFavorito={false}/>
+      {productos.map(producto =>(
+        <Product 
+          id={producto.id} 
+          key={producto.id} 
+          nombre={producto.nombre} 
+          stock={producto.stock} 
+          descripcion={producto.descripcion} 
+          precio={producto.precio} 
+          esFavorito={false} 
+          addToCart={addToCart}
+        />
+      ))}
+      
       <h1>Eventos <CiBatteryFull /></h1>
       <button onClick={saludar}>Dame click</button>
       <button onClick={() => alert('hola')}>Dame click 2</button>
@@ -79,6 +116,13 @@ const App = () => {
           </div>
         ))}
       </div>
+      <button onClick={() => setShowCart(!showCart)}>
+        {showCart ? 'Ocultar carrito' : 'Mostrar carrito'}
+      </button>
+      {
+        showCart && <Cart cart={cart}/>
+      }
+      
     </section>
 
   )

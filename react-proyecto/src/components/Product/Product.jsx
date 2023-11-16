@@ -1,47 +1,84 @@
 import React, { useState } from "react";
 import './Product.css'
 
-const Product = ({nombre, precio, esFavorito, stock, descripcion}) => {
-    const [isCurrentFavorite, setIsCurrentFavorite] = useState(esFavorito)
+const Product = ({ id, nombre, precio, esFavorito, stock, descripcion, addToCart }) => {
+  const [isCurrentFavorite, setIsCurrentFavorite] = useState(esFavorito)
+  const [showCounter, setShowCounter] = useState(false)
+  const [counter, setCounter] = useState(0)
 
-    const addFavorite = () =>{
-      setIsCurrentFavorite(!isCurrentFavorite)
-    }
-    console.log('me recargo')
-    return (
-      <div>
-        {esFavorito && <span>{'<3'}</span>}
-        {
-            nombre 
-                ? <h2>{nombre}</h2>
-                : <h2 className="red">Error 404!</h2>
-        }
-
-        {/* <h2 className={nombre ? 'subtitulo' : 'red'}>{nombre ? nombre : 'Error 404!'}</h2> */}
-   
-        <p>{descripcion}</p>
-        <span>Precio: {precio}</span>
-        <div>
-          Stock: {stock}
-        </div>
-        {
-          isCurrentFavorite
-            ? <button onClick={addFavorite}>Quitar de favoritos</button>
-            : <button onClick={addFavorite}>Agregar a favoritos</button>
-        }
-        <button>
-          Agregar al carrito
-        </button>
-        <div>
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
-          <button>Cancelar</button>
-        </div>
-      </div>
-    )
-  
+  const addFavorite = () => {
+    setIsCurrentFavorite(!isCurrentFavorite)
   }
+  console.log('me recargo')
+
+  const addCart = () =>{
+    setShowCounter(true)
+    setCounter(1)
+  }
+  const cancelCart = () =>{
+    setShowCounter(false)
+    setCounter(0)
+  }
+
+  const incrementCounter = () =>{
+    setCounter(counter + 1)
+  }
+  const decrementCounter = () =>{
+    if(counter == 1){
+      cancelCart()
+    }
+    else{
+      setCounter(counter - 1)
+    }
+    
+  }
+
+  const handleConfirm = () =>{
+    addToCart({nombre, descripcion, precio, id}, counter)
+    cancelCart()
+  }
+
+
+  return (
+    <div>
+      {esFavorito && <span>{'<3'}</span>}
+      {
+        nombre
+          ? <h2>{nombre}</h2>
+          : <h2 className="red">Error 404!</h2>
+      }
+
+      {/* <h2 className={nombre ? 'subtitulo' : 'red'}>{nombre ? nombre : 'Error 404!'}</h2> */}
+
+      <p>{descripcion}</p>
+      <span>Precio: {precio}</span>
+      <div>
+        Stock: {stock}
+      </div>
+      {
+        isCurrentFavorite
+          ? <button onClick={addFavorite}>Quitar de favoritos</button>
+          : <button onClick={addFavorite}>Agregar a favoritos</button>
+      }
+      {
+        showCounter
+          ? (
+            <div>
+              <button onClick={decrementCounter}>-</button>
+              <span>{counter}</span>
+              <button onClick={incrementCounter}>+</button>
+              <button onClick={cancelCart}>Cancelar</button>
+              <button onClick={handleConfirm}>Confirmar</button>
+            </div>
+          )
+          : <button onClick={addCart}>Agregar al carrito</button>
+  
+        }
+      
+    </div>
+  )
+
+}
 
 export default Product
 
