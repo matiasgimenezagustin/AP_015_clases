@@ -5,15 +5,16 @@ Link a grupo de wsp: https://chat.whatsapp.com/LF69ZsR7YBFCCUnJysTxHD
 
 Grupo 1:
 
-Ana Paula 
-Flor Alarcos
+Ana Paula  (!)
+Flor Alarcos (!)
 Julian Arrebola
-Natalia Belen Russo
+Natalia Belen Russo (!)
 Jeremias Goytia
 
-Repo: 
+Repo: https://github.com/julianarrebola1591/argentina-programa-react-grupo1.git
 
-Grupo 2: https://github.com/erica123-source/Grupo-2--React-UTN.git
+
+Grupo 2: 
 
 Erica Micaela Vargas
 Camila Taboada
@@ -21,7 +22,7 @@ Santiago Carlos boyadjian
 Noel Isaac Catari
 Julieta Rua Nafria
 
-Repo: 
+Repo: https://github.com/erica123-source/Grupo-2--React-UTN.git
 
 Grupo 3:
 
@@ -31,7 +32,7 @@ Matias Mansilla
 Federico Ayala
 Noah Nicanor Peralta Cassutt
 
-Repo: 
+Repo: https://github.com/Oliva-Facundo/Arg-Prog-grupo-3
 
 Grupo 4:
 
@@ -41,7 +42,7 @@ Joaquin Lopez
 Imanol carrozzo
 Enzo Defranco
 
-Repo: 
+Repo: https://github.com/imasarnago/Proyecto-final-con-ReactJS
 
 Grupo 5:
 
@@ -79,6 +80,8 @@ Grupo 8:
 Agusto Vega
 Leandro Hernan Luna
 Lucas Nuñez
+Matias Maraz
+Cynthia Escobar
 
 Repo:
 
